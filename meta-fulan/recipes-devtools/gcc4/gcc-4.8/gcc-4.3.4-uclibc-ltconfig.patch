@@ -1,0 +1,36 @@
+This patch to synchronize gcc ltconfig with libtool provided
+by autotools. The pattern to match the tag config section
+is slightly different in ltmain.sh of gcc with respect to the
+ltmain.sh within autotools.
+
+Signed-off-by: Carmelo Amoroso <carmelo.amoroso@st.com>
+
+--- gcc-4.3.4/libjava/classpath/ltconfig	2007-08-23 22:21:49.000000000 +0200
++++ gcc-4.3.4-st/libjava/classpath/ltconfig	2007-08-23 23:29:40.000000000 +0200
+@@ -433,7 +433,7 @@ if test -n "$tagname"; then
+     ;;
+   esac
+ 
+-  if grep "^### BEGIN LIBTOOL TAG CONFIG: $tagname$" < "$ofile" > /dev/null; then
++  if grep "^# ### BEGIN LIBTOOL TAG CONFIG: $tagname$" < "$ofile" > /dev/null; then
+     echo "$progname: tag name $tagname already exists" 1>&2
+     exit 1
+   fi
+@@ -2236,7 +2236,7 @@ available_tags=
+ EOF
+   else
+     echo "appending configuration tag \"$tagname\" to $ofile"
+-    echo "### BEGIN LIBTOOL TAG CONFIG: $tagname" >> "$ofile"
++    echo "# ### BEGIN LIBTOOL TAG CONFIG: $tagname" >> "$ofile"
+   fi
+   cfgfile="$ofile"
+   ;;
+@@ -2266,7 +2266,7 @@ EOF
+ EOF
+   else
+     echo "appending to $cfgfile"
+-    echo "### BEGIN LIBTOOL TAG CONFIG: $tagname" >> "$ofile"
++    echo "# ### BEGIN LIBTOOL TAG CONFIG: $tagname" >> "$ofile"
+   fi
+   ;;
+ esac

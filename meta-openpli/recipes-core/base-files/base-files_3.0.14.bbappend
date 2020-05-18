@@ -18,5 +18,5 @@ do_install_append() {
 
 	install -d ${D}${sysconfdir}/profile.d
 	install -m 0644 ${WORKDIR}/utf8.sh ${D}${sysconfdir}/profile.d/utf8.sh
-	install -m 0644 ${WORKDIR}/filesystems ${D}${sysconfdir}/filesystems
+        install -m 0644 ${WORKDIR}/filesystems ${D}${sysconfdir}/filesystems
 }

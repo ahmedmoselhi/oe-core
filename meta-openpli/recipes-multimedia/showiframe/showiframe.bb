@@ -5,7 +5,6 @@ LICENSE = "PD"
 LIC_FILES_CHKSUM = "file://showiframe.c;firstline=1;endline=1;md5=d67f9281bc4bfeee90913721aa741a8b"
 
 PV = "1.4"
-PR = "r4"
 
 SRC_URI = "file://showiframe.c"
 
@@ -19,3 +18,5 @@ do_install() {
 	install -d ${D}/${bindir}/
 	install -m 0755 ${S}/showiframe ${D}/${bindir}/
 }
+
+INSANE_SKIP_${PN} += "ldflags"

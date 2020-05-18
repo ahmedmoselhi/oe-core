@@ -21,6 +21,9 @@ RREPLACES_${PN} = "enigma2-plugin-extensions-iptvplayer"
 
 RDEPENDS_${PN} = " \
 	enigma2-plugin-extensions-e2iplayer-deps \
+        enigma2-plugin-systemplugins-serviceapp \
+        gstplayer \
+        exteplayer3 \
 	python-compression \
 	python-core \
 	python-e2icjson \

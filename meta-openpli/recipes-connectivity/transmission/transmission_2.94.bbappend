@@ -1,7 +1,5 @@
 SRC_URI += "\
 	file://configure-kill-intl-check.patch \
-	file://allow_the_rpc_server_to_listen_on_an_ipv6_address.patch \
-	file://configuration-default-download-dir.patch \
 	"
 
 OE_EXTRACONF = "\

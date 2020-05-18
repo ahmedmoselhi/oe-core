@@ -1,0 +1,24 @@
+diff --git a/gcc/Makefile.am b/gcc/Makefile.am
+new file mode 100644
+index 0000000..4b79236
+--- /dev/null
++++ b/gcc/Makefile.am
+@@ -0,0 +1,6 @@
++#
++#  Only here because autoreconf can use it to
++#  find the m4 file warnings.m4 required for
++#  configure!!
++#
++ACLOCAL_AMFLAGS = -I . -I .. -I ../config
+diff --git a/libcpp/Makefile.am b/libcpp/Makefile.am
+new file mode 100644
+index 0000000..4b79236
+--- /dev/null
++++ b/libcpp/Makefile.am
+@@ -0,0 +1,6 @@
++#
++#  Only here because autoreconf can use it to
++#  find the m4 file warnings.m4 required for
++#  configure!!
++#
++ACLOCAL_AMFLAGS = -I . -I .. -I ../config

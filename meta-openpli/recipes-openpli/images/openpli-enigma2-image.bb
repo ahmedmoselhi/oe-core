@@ -1,26 +1,17 @@
 require openpli-image.bb
 
-WIFI_DRIVERS = " \
-	firmware-carl9170 \
-	firmware-htc7010 \
-	firmware-htc9271 \
+WIFI_DRIVERS += "\
 	firmware-rt2870 \
 	firmware-rt73 \
-	firmware-rtl8712u \
-	firmware-rtl8188eu \
 	firmware-rtl8192cu \
-	firmware-zd1211 \
+	firmware-rtl8188eu \
+	firmware-rtl8192eu \
 	\
-	kernel-module-8192eu \
-	kernel-module-ath9k-htc \
-	kernel-module-carl9170 \
-	kernel-module-r8712u \
 	kernel-module-rt2500usb \
 	kernel-module-rt2800usb \
 	kernel-module-rt73usb \
-	kernel-module-rtl8187 \
-	kernel-module-rtl8192cu \
-	kernel-module-zd1211rw \
+	kernel-module-r8188eu \
+	rtl8192cu \
 	"
 
 ENIGMA2_PLUGINS = " \
@@ -33,7 +24,6 @@ ENIGMA2_PLUGINS = " \
 	enigma2-plugin-extensions-moviecut \
 	enigma2-plugin-extensions-openwebif \
 	enigma2-plugin-extensions-pictureplayer \
-	enigma2-plugin-extensions-ppanel \
 	\
 	enigma2-plugin-systemplugins-fastscan \
 	enigma2-plugin-systemplugins-hotplug \
@@ -54,6 +44,12 @@ ENIGMA2_PLUGINS = " \
 	${@bb.utils.contains('OPENPLI_FEATURES', 'dvd', 'enigma2-plugin-extensions-cdinfo enigma2-plugin-extensions-dvdplayer', '', d)} \
 	${@bb.utils.contains('OPENPLI_FEATURES', 'fan', 'enigma2-plugin-systemplugins-tempfancontrol', '', d)} \
 	${@bb.utils.contains('OPENPLI_FEATURES', '7seg', 'enigma2-plugin-systemplugins-vfdcontrol', '', d)} \
+	enigma2-plugin-extensions-dlnabrowser \
+	enigma2-plugin-extensions-dlnaserver \
+	enigma2-plugin-extensions-subssupport \
+	enigma2-plugin-extensions-e2iplayer \
+	enigma2-plugin-extensions-reconstructapsc \
+	enigma2-plugin-systemplugins-systemtime \
 	"
 
 DEPENDS += " \

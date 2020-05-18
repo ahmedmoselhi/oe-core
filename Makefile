@@ -59,7 +59,7 @@ BBLAYERS ?= \
 	$(CURDIR)/meta-octagon \
 	$(CURDIR)/meta-gfutures \
 	$(CURDIR)/meta-gigablue \
-	$(CURDIR)/meta-ixuss \
+	$(CURDIR)/meta-fulan \
 	$(CURDIR)/meta-local \
 	$(CURDIR)/meta-qt5
 
@@ -115,6 +115,10 @@ init: $(BBLAYERS) $(CONFFILES)
 image: init
 	@echo 'Building image for $(MACHINE)'
 	@. $(TOPDIR)/env.source && cd $(TOPDIR) && bitbake openpli-enigma2-image
+
+satdreamgr: init
+	@echo 'Building image for $(MACHINE)'
+	@. $(TOPDIR)/env.source && cd $(TOPDIR) && bitbake satdreamgr-image
 
 feed: init
 	@echo 'Building feed for $(MACHINE)'

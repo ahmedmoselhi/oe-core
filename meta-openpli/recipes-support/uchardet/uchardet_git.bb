@@ -5,12 +5,12 @@ LICENSE = "MPLv1.1"
 LIC_FILES_CHKSUM = "file://COPYING;md5=6ecda54f6f525388d71d6b3cd92f7474"
 
 # make the origin overridable from OE config, for local mirroring
-SRC_ORIGIN ?= "git://cgit.freedesktop.org/uchardet/uchardet"
-SRC_URI := "${SRC_ORIGIN}"
+SRC_URI = "git://github.com/OpenVisionE2/uchardet.git"
+
 
 S = "${WORKDIR}/git/"
 
 inherit pkgconfig cmake gitpkgv
 
-PV = "0.0.7+git${SRCPV}"
-PKGV = "0.0.7+git${GITPKGV}"
+PV = "0.0.6+git${SRCPV}"
+PKGV = "0.0.6+git${GITPKGV}"

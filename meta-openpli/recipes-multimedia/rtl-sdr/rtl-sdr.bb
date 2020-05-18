@@ -4,11 +4,10 @@ MAINTAINER = "http://osmocom.org/projects/sdr"
 LICENSE = "GPLv2"
 LIC_FILES_CHKSUM = "file://COPYING;md5=751419260aa954499f7abaabaa882bbe"
 
-inherit gitpkgv
+inherit gitpkgv cmake
 
 PV = "1.0+git${SRCPV}"
 PKGV = "1.0+git${GITPKGV}"
-PR = "r0"
 
 SRC_URI = "git://git.osmocom.org/rtl-sdr.git;protocol=git"
 
@@ -18,13 +17,4 @@ DEPENDS = "libusb1"
 
 EXTRA_OECMAKE += " -DLIB_INSTALL_DIR=${libdir}"
 
-inherit cmake
-
 EXTRA_OECONF = "--enable-driver-detach"
-
-# next...
-#do_install_append() {
-#	# some programs try to load librtlsdr.so
-#	cd ${D}${libdir}
-#	ln -sf librtlsdr.so.0 librtlsdr.so
-#}

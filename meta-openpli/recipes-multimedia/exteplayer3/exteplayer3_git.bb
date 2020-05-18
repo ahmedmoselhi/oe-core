@@ -4,13 +4,15 @@ SECTION = "multimedia"
 LICENSE = "GPL-2.0"
 LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/GPL-2.0;md5=801f80980d171dd6425610833a22dbe6"
 
-DEPENDS = "ffmpeg"
+DEPENDS = "ffmpeg libbluray"
+RDEPENDS_${PN} = "ffmpeg libbluray"
 
-inherit gitpkgv
+inherit gitpkgv upx-compress
 
-PV = "63+gitr${SRCPV}"
-PKGV = "63+gitr${GITPKGV}"
+PV = "68+gitr${SRCPV}"
+PKGV = "68+gitr${GITPKGV}"
 
+SRCREV = "${AUTOREV}"
 SRC_URI = "git://github.com/e2iplayer/exteplayer3.git;branch=master"
 
 S = "${WORKDIR}/git/"
@@ -84,3 +86,5 @@ do_install() {
     install -d ${D}${bindir}
     install -m 0755 ${S}/exteplayer3 ${D}${bindir}
 }
+
+INSANE_SKIP_${PN} += "ldflags"

@@ -1,12 +1,13 @@
-DESCRIPTION = "twisted SNMP framework"
+SUMMARY = "twisted SNMP framework"
 SECTION = "devel/python"
 PRIORITY = "optional"
-RDEPENDS_${PN} = "python-pysnmp-se"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://license.txt;md5=c6f330cac7a286df5a2a7617fdda815f"
 
+RDEPENDS_${PN} = "python-pysnmp-se"
+
 SRCNAME = "TwistedSNMP"
-SRC_URI = "${SOURCEFORGE_MIRROR}/${PN}/${SRCNAME}-${PV}.tar.gz"
+SRC_URI = "${SOURCEFORGE_MIRROR}/${BPN}/${SRCNAME}-${PV}.tar.gz"
 
 S = "${WORKDIR}/${SRCNAME}-${PV}"
 

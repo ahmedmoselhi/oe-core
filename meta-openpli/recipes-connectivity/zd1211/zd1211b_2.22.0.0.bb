@@ -7,7 +7,6 @@ RDEPENDS_${PN} = "wireless-tools"
 
 inherit module
 
-PR = "r3"
 
 SRC_URI = " \
         http://www.reactivated.net/software/zd1211-vendor/releases/ZD1211LnxDrv_2_22_0_0.tar.gz \
@@ -22,11 +21,11 @@ S = "${WORKDIR}/ZD1211LnxDrv_2_22_0_0"
 
 do_compile() {
         unset CFLAGS CPPFLAGS CXXFLAGS LDFLAGS
-        oe_runmake KERN_VER=2.6 KDIR=${STAGING_KERNEL_DIR} KERNEL_SOURCE=${STAGING_KERNEL_DIR} \
-		MODPATH=${D}${base_libdir}/modules/${KERNEL_VERSION} ZD1211REV_B=1
+        oe_runmake KERN_VER=2.6 KDIR=${STAGING_KERNEL_BUILDDIR} KERNEL_SOURCE=${STAGING_KERNEL_BUILDDIR} \
+        MODPATH=${D}${base_libdir}/modules/${KERNEL_VERSION} ZD1211REV_B=1
 }
 
 do_install() {
-        install -d ${D}${base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/net
-        install -m 0644 ${S}/zd1211*${KERNEL_OBJECT_SUFFIX} ${D}${base_libdir}/modules/${KERNEL_VERSION}/kernel/drivers/net
+        install -d ${D}/lib/modules/${KERNEL_VERSION}/kernel/drivers/net
+        install -m 0644 ${S}/zd1211*${KERNEL_OBJECT_SUFFIX} ${D}/lib/modules/${KERNEL_VERSION}/kernel/drivers/net
 }

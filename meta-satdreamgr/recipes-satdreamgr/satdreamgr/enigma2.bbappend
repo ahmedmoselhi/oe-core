@@ -1,23 +1,6 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/files:"
 
 SRC_URI += " \
-	file://0001-Set-default-skin-Satdreamgr-HD-TranspBA.patch \
-	file://0002-Satdreamgr-InfoBarGenerics-changes.patch \
-	file://0001-Satdreamgr-show-softwaremanger-on-setupmenu.patch \
-	file://0001-Satdreamgr-tempfancontrol-add-support-for-dmv2.patch \
-	file://0001-Satdreamgr-Devices-with-Spaces.patch \
-	file://caid2.patch \
-	file://expert.patch \
-	file://transba.patch \
-	file://vh2.patch \
-	file://pos.patch \
-	file://sdgjson.patch \
-	file://sdg_about.patch \
-	file://sdg_extra_translations.patch \
-	file://sdg_hdmicec.patch \
-	file://sdg_sw.patch \
-	file://net.patch \
-	file://e2avahi.patch \
 	"
 
 SRC_URI_append_ixusszero = " file://0001-Ixuss-disable-blending-issues.patch "
@@ -31,7 +14,6 @@ RRECOMMENDS_${PN} = " \
 	hotplug-e2-helper \
 	glibc-gconv-utf-16 \
 	python-sendfile \
-	virtual/enigma2-mediaservice \
 	"
 
 do_install_append() {

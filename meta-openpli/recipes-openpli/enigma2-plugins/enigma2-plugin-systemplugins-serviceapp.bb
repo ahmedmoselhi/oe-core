@@ -15,6 +15,9 @@ S = "${WORKDIR}/git"
 
 inherit autotools gitpkgv pythonnative pkgconfig gettext
 
+CXXFLAGS_append += " -std=c++11"
+CXXFLAGS_append_sh4 += " -fPIC -fno-strict-aliasing "
+
 PV = "1+git${SRCPV}"
 PKGV = "1+git${GITPKGV}"
 
@@ -37,4 +40,3 @@ FILES_${PN} = "\
 FILES_${PN}-dev = "\
 	${libdir}/enigma2/python/Plugins/SystemPlugins/ServiceApp/*.py \
 	${libdir}/enigma2/python/Plugins/SystemPlugins/ServiceApp/serviceapp.la"
-

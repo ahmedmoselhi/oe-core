@@ -1,13 +1,11 @@
 SUMMARY  = "JPyExecJS is a porting of ExecJS from Ruby. PyExecJS automatically picks the best runtime available to evaluate your JavaScript program."
 DESCRIPTION = "Run JavaScript code from Python"
-HOMEPAGE = "https://pypi.python.org/pypi/PyExecJS"
-
+HOMEPAGE = "https://pypi.org/project/PyExecJS"
 LICENSE = "MIT"
 LIC_FILES_CHKSUM = "file://LICENSE;md5=70f9df77ea55ba7d1f19e18f62cf5bb6"
 
-PR = "r0"
-
-
+# This library is no longer maintananced. Bugs are not be fixed (even if they are trivial or essential).
+# We suggest to use other library or to make a fork.
 
 SRC_URI = "https://files.pythonhosted.org/packages/ba/8e/aedef81641c8dca6fd0fb7294de5bed9c45f3397d67fddf755c1042c2642/PyExecJS-${PV}.tar.gz"
 

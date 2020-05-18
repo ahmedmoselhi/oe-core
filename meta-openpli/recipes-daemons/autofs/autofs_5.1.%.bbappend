@@ -1,6 +1,6 @@
 FILESEXTRAPATHS_prepend := "${THISDIR}/${PN}:"
 
-EXTRA_OECONF += "--with-confdir=/etc/default"
+EXTRA_OECONF += "--with-confdir=${sysconfdir}/default"
 
 SRC_URI += " file://99_autofs"
 
@@ -19,8 +19,8 @@ do_install_append() {
 
 pkg_postinst_${PN} () {
         if [ -z "$D" ]; then
-                if [ -e ${sysconfdir}/init.d/populate-volatile.sh ]; then
-                        ${sysconfdir}/init.d/populate-volatile.sh update
+                if [ -e /etc/init.d/populate-volatile.sh ]; then
+                        /etc/init.d/populate-volatile.sh update
                 fi
         fi
 }

@@ -1,0 +1,23 @@
+diff -ru gcc-4.8.1/gcc/configure.ac gcc-4.8.1-orig/gcc/configure.ac
+--- gcc-4.8.2.init/gcc/configure.ac	2013-11-12 14:16:01.684661650 +0100
++++ gcc-4.8.2/gcc/configure.ac	2013-11-12 14:16:23.014373713 +0100
+@@ -338,7 +338,7 @@ GCC_STDINT_TYPES
+ # So, we only use -pedantic if we can disable those warnings.
+ 
+ ACX_PROG_CC_WARNING_OPTS(
+-	m4_quote(m4_do([-W -Wall -Wno-narrowing -Wwrite-strings -Wcast-qual])), [loose_warn])
++	m4_quote(m4_do([-W -Wall -Wwrite-strings -Wcast-qual])), [loose_warn])
+ ACX_PROG_CC_WARNING_OPTS(
+ 	m4_quote(m4_do([-Wstrict-prototypes -Wmissing-prototypes])),
+ 	[c_loose_warn])
+@@ -347,8 +347,8 @@ ACX_PROG_CC_WARNING_OPTS(
+ ACX_PROG_CC_WARNING_OPTS(
+ 	m4_quote(m4_do([-Wold-style-definition -Wc++-compat])), [c_strict_warn])
+ ACX_PROG_CC_WARNING_ALMOST_PEDANTIC(
+-	m4_quote(m4_do([-Wno-long-long -Wno-variadic-macros ], 
+-		       [-Wno-overlength-strings])), [strict_warn])
++	m4_quote(m4_do([-Wno-long-long], 
++		       )), [strict_warn])
+ ACX_PROG_CC_WARNINGS_ARE_ERRORS([manual], [strict_warn])
+ 
+ # The above macros do nothing if the compiler is not GCC.  However, the

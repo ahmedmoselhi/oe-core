@@ -23,6 +23,7 @@ DEPENDS = "python"
 RDEPENDS_${PN} = "kernel-module-nandsim openmultiboot oe-alliance-branding"
 
 RDEPENDS_${PN}_dm800 = "openmultiboot oe-alliance-branding unjffs2"
+RDEPENDS_${PN}_sh4 = "openmultiboot oe-alliance-branding unjffs2"
 RDEPENDS_${PN}_dm500hd = "openmultiboot oe-alliance-branding unjffs2"
 RDEPENDS_${PN}_dm800se = "openmultiboot oe-alliance-branding unjffs2"
 
