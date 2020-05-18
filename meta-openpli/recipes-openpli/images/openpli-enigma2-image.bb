@@ -6,12 +6,14 @@ WIFI_DRIVERS += "\
 	firmware-rtl8192cu \
 	firmware-rtl8188eu \
 	firmware-rtl8192eu \
+        rt73-firmware \
 	\
 	kernel-module-rt2500usb \
 	kernel-module-rt2800usb \
 	kernel-module-rt73usb \
 	kernel-module-r8188eu \
 	rtl8192cu \
+        rt3070 \
 	"
 
 ENIGMA2_PLUGINS = " \
