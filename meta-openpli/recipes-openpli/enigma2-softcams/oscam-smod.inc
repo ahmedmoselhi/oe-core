@@ -8,6 +8,8 @@ DESCRIPTION_${PN} = "Combining the benefits of\n \
 
 SRC_URI="git://github.com/oe-alliance/oscam-smod.git;protocol=git"
 
+SRCREV = "${AUTOREV}"
+
 CAMNAME = "oscam-smod"
 
 EXTRA_OECMAKE += "\

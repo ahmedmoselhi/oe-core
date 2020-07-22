@@ -12,4 +12,4 @@ EXTRA_OECONF_append_sh4 += "\
 	--enable-${MACHINE} --with-lcd \
         "
 
-SRC_URI_sh4 = "${GITHUB_URI}/ahmedmoselhi/satdreamer-e2.git;branch=master"
+SRC_URI_sh4 = "${GITHUB_URI}/ahmedmoselhi/satdreamer-e2.git;branch=7.3"

@@ -4,7 +4,10 @@ include conf/machine/include/build-extras.inc
 BRAND_OEM = "fulan"
 MACHINE_NAME = "${@bb.utils.contains('MACHINE', 'spark7162', 'SPARK TRIPLEX', 'SPARK 990 LX', d)}"
 MACHINE_BRAND = "GOLDEN MEDIA"
-IMAGEDIR ?= "enigma2"
+IMAGEVERSION := "${DISTRO_NAME}-${DISTRO_VERSION}-${DATE}"
+IMAGEVERSION[vardepsexclude] = "DATE"
+IMAGEDIR ?= "${MACHINE}"
+IMGDEPLOYDIR ?= "${DEPLOY_DIR_IMAGE}"
 MTD_KERNEL = "mtd5"
 MTD_ROOTFS = "mtd6"
 KERNEL_FILE = "uImage"
@@ -38,7 +41,7 @@ SERIAL_CONSOLE = "115200 ttyAS0"
 
 DVBPROVIDER = "kernel"
 
-MACHINE_FEATURES += "3dtv alsa ext2 ext3 usbhost serial hdmicec switchoff singlecore legacykernel fulan textlcd sh4booster no-nmap omb skins1080 directfb"
+MACHINE_FEATURES += "3dtv alsa ext2 ext3 usbhost serial hdmicec switchoff singlecore legacykernel fulan textlcd sh4booster no-nmap omb skins1080 directfb wlan"
 DISTRO_FEATURES_append += "gtk-directfb libsigc2"
 
 KERNEL_IMAGETYPE = "uImage"
@@ -74,7 +77,7 @@ IMAGE_CMD_jffs2_append = "\
     mv ${DEPLOY_DIR_IMAGE}/${IMAGE_NAME}.rootfs.jffs2 ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${ROOTFS_FILE}; \
     cp ${DEPLOY_DIR_IMAGE}/uImage ${DEPLOY_DIR_IMAGE}/${IMAGEDIR}/${KERNEL_FILE}; \
     cd ${DEPLOY_DIR_IMAGE}; \
-    zip ${IMAGE_NAME}_usb.zip ${IMAGEDIR}/*; \
+    zip ${DISTRO_NAME}-${DISTRO_VERSION}-${MACHINE}_usb.zip ${IMAGEDIR}/*; \
     rm -f ${DEPLOY_DIR_IMAGE}/*.jffs2; \
     rm -f ${DEPLOY_DIR_IMAGE}/*.manifest; \
     rm -f ${DEPLOY_DIR_IMAGE}/.jffs2; \
@@ -84,6 +87,7 @@ IMAGE_CMD_jffs2_append = "\
 
 # Add uImage in tar image boot directory
 IMAGE_CMD_tar_prepend = "\
+    rm -rf ${IMAGE_ROOTFS}/tmp && ln -s var/volatile/tmp ${IMAGE_ROOTFS}/tmp; \
     cp ${DEPLOY_DIR_IMAGE}/uImage ${IMAGE_ROOTFS}/boot/${KERNEL_FILE}; \
     "
 	
@@ -107,6 +111,8 @@ MACHINE_EXTRA_RRECOMMENDS += "\
     enigma2-plugin-systemplugins-servicemp3 \
     enigma2-plugin-systemplugins-sh4boostercontrol \
     enigma2-plugin-systemplugins-sh4osdadjustment \
+    enigma2-plugin-systemplugins-skinselector \
+    enigma2-plugin-extensions-${MACHINE}vfd \
     "
 
 EXTRA_IMAGEDEPENDS += "\

@@ -16,8 +16,8 @@ IMAGE_INSTALL_remove = "enigma2-plugin-softcams-oscam"
 IMAGE_INSTALL_remove = "3rd-party-feed-configs"
 
 IMAGE_INSTALL += " \
-	${@bb.utils.contains("MACHINE_FEATURES", "blindscan-dvbs", "enigma2-plugin-systemplugins-blindscan" , "", d)} \
 	dabstreamer \
+        python-service-identity \
 	enigma2-plugin-extensions-backupsuite \
 	enigma2-plugin-extensions-epgimport \
 	enigma2-plugin-extensions-foreca \
@@ -62,7 +62,6 @@ DEPENDS += " \
 	libcec \
 	libtorrent \
 	ntp \
-	openvpn \
 	p7zip \
 	satipclient \
 "

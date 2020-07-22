@@ -13,6 +13,8 @@ SRC_URI = " \
             file://scam_${PV}_* \
 "
 
+SRCREV = "${AUTOREV}"
+
 require softcam.inc
 
 #CONFFILES_${PN} ?= "/etc/CCcam.cfg /etc/ppanels/CCcam.xml"

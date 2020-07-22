@@ -6,10 +6,12 @@ WIFI_DRIVERS += "\
 	firmware-rtl8192cu \
 	firmware-rtl8188eu \
 	firmware-rtl8192eu \
-        rt73-firmware \
+        firmware-rt73 \
+        firmware-mt7601u \
 	\
 	kernel-module-rt2500usb \
 	kernel-module-rt2800usb \
+        kernel-module-mt7601usta \
 	kernel-module-rt73usb \
 	kernel-module-r8188eu \
 	rtl8192cu \
@@ -19,6 +21,7 @@ WIFI_DRIVERS += "\
 ENIGMA2_PLUGINS = " \
 	enigma2-plugin-extensions-audiosync \
 	enigma2-plugin-extensions-autobackup \
+        enigma2-plugin-extensions-cacheflush \
 	enigma2-plugin-extensions-cutlisteditor \
 	enigma2-plugin-extensions-graphmultiepg \
 	enigma2-plugin-extensions-mediaplayer \
@@ -26,6 +29,7 @@ ENIGMA2_PLUGINS = " \
 	enigma2-plugin-extensions-moviecut \
 	enigma2-plugin-extensions-openwebif \
 	enigma2-plugin-extensions-pictureplayer \
+        enigma2-plugin-systemplugins-extnumberzap \
 	\
 	enigma2-plugin-systemplugins-fastscan \
 	enigma2-plugin-systemplugins-hotplug \
@@ -36,11 +40,12 @@ ENIGMA2_PLUGINS = " \
 	enigma2-plugin-systemplugins-videomode \
 	enigma2-plugin-systemplugins-videotune \
 	enigma2-plugin-systemplugins-osdpositionsetup \
+        enigma2-plugin-systemplugins-skinselector \
+        enigma2-plugin-systemplugins-wirelesslan \
 	\
 	${@bb.utils.contains("MACHINE_FEATURES", "3dtv", "enigma2-plugin-systemplugins-osd3dsetup" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "dvb-c", "enigma2-plugin-systemplugins-cablescan" , "", d)} \
 	${@bb.utils.contains("MACHINE_FEATURES", "hdmicec", "enigma2-plugin-systemplugins-hdmicec" , "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "wlan", "enigma2-plugin-systemplugins-wirelesslan", "", d)} \
 	\
 	${@bb.utils.contains('OPENPLI_FEATURES', 'ci', 'enigma2-plugin-systemplugins-commoninterfaceassignment', '', d)} \
 	${@bb.utils.contains('OPENPLI_FEATURES', 'dvd', 'enigma2-plugin-extensions-cdinfo enigma2-plugin-extensions-dvdplayer', '', d)} \
@@ -49,8 +54,8 @@ ENIGMA2_PLUGINS = " \
 	enigma2-plugin-extensions-dlnabrowser \
 	enigma2-plugin-extensions-dlnaserver \
 	enigma2-plugin-extensions-subssupport \
-	enigma2-plugin-extensions-e2iplayer \
 	enigma2-plugin-extensions-reconstructapsc \
+	enigma2-plugin-extensions-install-ffmpeg \
 	enigma2-plugin-systemplugins-systemtime \
 	"
 
@@ -71,15 +76,10 @@ IMAGE_INSTALL += " \
 	\
 	${WIFI_DRIVERS} \
 	\
-	${@bb.utils.contains_any('MACHINE', 'vuuno vuduo vuultimo vusolo vusolo2 vuduo2 vusolose vuzero vuuno4k vuuno4kse vuzero4k vuultimo4k vusolo4k vuduo4k', 'vuplus-tuner-turbo', '', d)} \
-	${@bb.utils.contains_any('MACHINE', 'vuuno4kse vuultimo4k vuduo4k', 'vuplus-hdmi-in-helper', '', d)} \
-	\
-	${@bb.utils.contains_any('MACHINE', 'gbquad4k gbue4k', 'kernel-module-8812au', '', d)} \
-	${@bb.utils.contains_any('MACHINE', 'gbquad4k gbue4k', 'enigma2-plugin-systemplugins-wirelesslan', '', d)} \
-	\
-	${@bb.utils.contains("MACHINE_FEATURES", "chromium", "enigma2-plugin-extensions-chromium", "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "transcoding", "enigma2-plugin-systemplugins-transcodingsetup", "", d)} \
-	${@bb.utils.contains("MACHINE_FEATURES", "streamproxy", "streamproxy", "", d)} \
+        enigma2-plugin-extensions-raedquicksignal \
+        enigma2-plugin-extensions-youtube-dl \
+        enigma2-plugin-extensions-keyadder \
+	enigma2-plugin-systemplugins-serviceapp \
 	${@bb.utils.contains('MACHINE_FEATURES', 'ctrlrc', "enigma2-plugin-systemplugins-remotecontrolcode", "", d)} \
 	\
 	${@bb.utils.contains('OPENPLI_FEATURES', 'dvd', 'cdtextinfo', '', d)} \

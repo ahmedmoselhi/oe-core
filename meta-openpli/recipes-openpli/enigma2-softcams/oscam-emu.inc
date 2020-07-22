@@ -5,6 +5,8 @@ DESCRIPTION_${PN} = "OSCam Open Source Softcam\n \
 
 SRC_URI="git://github.com/oscam-emu/oscam-patched.git;protocol=git"
 
+SRCREV = "${AUTOREV}"
+
 CAMNAME = "oscam-emu"
 
 EXTRA_OECMAKE += "\

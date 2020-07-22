@@ -13,7 +13,7 @@ SRC_URI = " \
             file://mgcamd_${PV}_* \
             file://init.mgcamd \
 "
-
+SRCREV = "${AUTOREV}"
 require softcam.inc
 require softcam-binary-32bit.inc
 

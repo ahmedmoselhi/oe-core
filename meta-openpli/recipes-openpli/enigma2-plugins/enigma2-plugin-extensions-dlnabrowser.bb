@@ -8,7 +8,7 @@ SRC_URI = "git://code.vuplus.com/git/dvbapp.git;protocol=http;branch=${BRANCH} \
 	file://enigma2-plugin-systemplugins-dlnabrowser_20130723.patch;striplevel=1;apply=yes \
 "
 
-inherit gitpkgv pythonnative
+inherit gitpkgv
 PV = "git${SRCPV}"
 PKGV = "git${GITPKGV}"
 
@@ -16,11 +16,11 @@ DEPENDS = "djmount fuse libupnp"
 PROVIDES = "enigma2-plugin-systemplugins-dlnabrowser"
 RDEPENDS_${PN} = "djmount fuse-utils fuse libupnp"
 RRECOMMENDS_${PN} = "kernel-module-fuse"
-FILES_${PN} = "${libdir}/enigma2/python/Plugins/Extensions/DLNABrowser/*"
+FILES_${PN} = "/usr/lib/enigma2/python/Plugins/Extensions/DLNABrowser/*"
 PACKAGES = "${PN}"
 
 do_install() {
-	install -d ${D}${libdir}/enigma2/python/Plugins/Extensions/DLNABrowser
-	install -m 0644 ${S}/lib/python/Plugins/Extensions/DLNABrowser/*.py ${D}${libdir}/enigma2/python/Plugins/Extensions/DLNABrowser
-	python -O -m compileall ${D}${libdir}/enigma2/python/Plugins/
+	install -d ${D}/usr/lib/enigma2/python/Plugins/Extensions/DLNABrowser
+	install -m 0644 ${S}/lib/python/Plugins/Extensions/DLNABrowser/*.py ${D}/usr/lib/enigma2/python/Plugins/Extensions/DLNABrowser
+	python2 -O -m compileall ${D}/usr/lib/enigma2/python/Plugins/
 }

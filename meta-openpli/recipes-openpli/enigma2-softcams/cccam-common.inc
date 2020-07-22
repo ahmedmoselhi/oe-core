@@ -15,6 +15,8 @@ SRC_URI = " \
             file://CCcam.xml \
 "
 
+SRCREV = "${AUTOREV}"
+
 require softcam.inc
 require softcam-binary-32bit.inc
 

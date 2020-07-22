@@ -16,9 +16,9 @@ DEPENDS = " \
 	tuxtxt-enigma2 \
 	"
 
-# SoftcamSetup and SkinSelector is integrated now
-RREPLACES_${PN} = "enigma2-plugin-pli-softcamsetup enigma2-plugin-systemplugins-skinselector"
-RCONFLICTS_${PN} = "enigma2-plugin-pli-softcamsetup enigma2-plugin-systemplugins-skinselector"
+# SoftcamSetup is integrated now
+RREPLACES_${PN} = "enigma2-plugin-pli-softcamsetup"
+RCONFLICTS_${PN} = "enigma2-plugin-pli-softcamsetup"
 
 RDEPENDS_${PN} = " \
 	alsa-conf \
