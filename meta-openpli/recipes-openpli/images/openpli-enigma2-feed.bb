@@ -30,12 +30,6 @@ OPTIONAL_WIFI_PACKAGES = "\
 	${@ 'kernel-module-rt3573sta' if ("${KERNEL_VERSION}" and bb.utils.vercmp_string("${KERNEL_VERSION}", '3.12') < 0) else '' } \
 	${@ 'kernel-module-rt5572sta' if ("${KERNEL_VERSION}" and bb.utils.vercmp_string("${KERNEL_VERSION}", '3.10') < 0) else '' } \
 	kernel-module-8723a \
-	${@bb.utils.contains('MACHINE_ESSENTIAL_EXTRA_RDEPENDS', 'rtl8723bs', '', bb.utils.contains('MACHINE_ESSENTIAL_EXTRA_RDEPENDS', 'spycat-rtl8723bs', '', 'kernel-module-r8723bs' if ("${KERNEL_VERSION}" and bb.utils.vercmp_string("${KERNEL_VERSION}", '4.12') < 0) else '', d), d)} \
-	kernel-module-8723bu \
-	kernel-module-8812au \
-	kernel-module-8814au \
-	kernel-module-88x2bu \
-	kernel-module-8189es \
 	kernel-module-8192eu \
 	firmware-rtl8723bu \
 	firmware-mt7601u \
@@ -60,7 +54,6 @@ OPTIONAL_PACKAGES += " \
 	dvblast \
 	dvbsnoop \
 	dvdfs \
-	edid-decode \
 	evtest \
 	exfat-utils \
 	exteplayer3 \
@@ -114,7 +107,6 @@ OPTIONAL_PACKAGES += " \
 	python-iso639 \
 	picocom \
 	ppp \
-	rclone \
 	rsync \
 	rtorrent \
 	sabnzbd \
@@ -135,9 +127,7 @@ OPTIONAL_PACKAGES += " \
 	vim \
 	wget \
 	wscan \
-	yafc \
 	zeroconf \
-	zerotier \
 	zip \
 	zsh \
 	${OPTIONAL_BSP_PACKAGES} \
@@ -173,7 +163,6 @@ OPTIONAL_ENIGMA2_PACKAGES = " \
 	enigma2-plugin-systemplugins-extrafancontrol \
 	enigma2-plugin-systemplugins-radiotimesxmltvemulator \
 	enigma2-plugin-extensions-historyzapselector \
-	enigma2-plugin-extensions-lcd4linux \
 	enigma2-plugin-extensions-tmbd \
 	enigma2-plugin-extensions-xmodem \
 	enigma2-plugin-extensions-vcs \
@@ -185,7 +174,7 @@ OPTIONAL_ENIGMA2_PACKAGES = " \
 	enigma2-plugin-skins-glamouraurafhd \
 	enigma2-plugins \
 	enigma2-skins \
-	softcams-enigma2-meta \
+	softcams-meta \
 	packagegroup-openplugins \
 	${@bb.utils.contains("MACHINE_FEATURES", "blindscan-dvbs", "enigma2-plugin-systemplugins-satscan" , "", d)} \
 	enigma2-plugin-extensions-backupsuite \
