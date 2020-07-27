@@ -10,7 +10,7 @@ require recipes-core/meta/package-index.bb
 require conf/license/openpli-gplv2.inc
 
 # Depend on the image, so that it gets build
-DEPENDS = "openpli-enigma2-image"
+DEPENDS = "satdreamgr-image"
 
 MACHINE_ESSENTIAL_EXTRA_RDEPENDS ?= ""
 
