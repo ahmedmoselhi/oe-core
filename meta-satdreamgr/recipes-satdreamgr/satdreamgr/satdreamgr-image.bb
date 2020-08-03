@@ -41,7 +41,6 @@ IMAGE_INSTALL += " \
 	livestreamersrv \
 	ntfs-3g \
 	satdreamgr-bootlogo \
-	satdreamgr-extra-feed-configs \
 	satdreamgr-panel \
 	softcam-support \
 "
