@@ -12,7 +12,6 @@ PACKAGES_DYNAMIC = "enigma2-plugin-(?!pli-).*"
 PACKAGES += "\
 	enigma2-plugin-extensions-mosaic \
 	enigma2-plugin-extensions-bonjour \
-	enigma2-plugin-extensions-transmission \
 	enigma2-plugin-systemplugins-systemtime \
 	"
 RDEPENDS_enigma2-plugin-extensions-mosaic = "aio-grab"
@@ -21,7 +20,6 @@ RDEPENDS_enigma2-plugin-extensions-bonjour = "avahi-daemon"
 
 RRECOMMENDS_enigma2-plugin-systemplugins-blindscan = "virtual/blindscan-dvbs"
 RRECOMMENDS_enigma2-plugin-systemplugins-systemtime = "ntpdate"
-RRECOMMENDS_enigma2-plugin-extensions-transmission = "transmission transmission-client"
 
 PROVIDES += "\
 	${@bb.utils.contains("MACHINE_FEATURES", "transcoding","enigma2-plugin-systemplugins-transcodingsetup","",d)} \

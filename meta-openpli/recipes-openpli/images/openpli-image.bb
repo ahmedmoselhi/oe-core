@@ -21,7 +21,6 @@ IMAGE_INSTALL = "\
 	glibc-binary-localedata-en-gb \
 	kernel-params \
 	modutils-loadscript \
-	nfs-utils-client \
 	openpli-bootlogo \
 	openssh-sftp \
 	openssh-sftp-server \
@@ -32,7 +31,6 @@ IMAGE_INSTALL = "\
 	python-ipaddress  \
 	python-netifaces \
 	python-pysmb \
-	nfs-utils \
 	samba-base \
 	sdparm \
 	tuxbox-common \

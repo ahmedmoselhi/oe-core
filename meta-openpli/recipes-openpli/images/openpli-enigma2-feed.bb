@@ -118,7 +118,6 @@ OPTIONAL_PACKAGES += " \
 	strace \
 	tcpdump \
 	tmux \
-	transmission \
 	udpxy \
 	unzip \
 	usb-modeswitch \

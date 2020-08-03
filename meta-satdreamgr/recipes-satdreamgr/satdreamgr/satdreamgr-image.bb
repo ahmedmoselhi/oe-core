@@ -34,6 +34,7 @@ IMAGE_INSTALL += " \
         enigma2-plugin-softcams-mgcamd \
         enigma2-plugin-softcams-cccam \
 	enigma2-plugin-skins-satdreamgr-hd-transpba \
+        enigma2-plugin-skins-proteusfhd \
 	enigma2-plugin-systemplugins-devicemanager \
 	enigma2-plugin-systemplugins-mphelp \
 	fuse-exfat \
